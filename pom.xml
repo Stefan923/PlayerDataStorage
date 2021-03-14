@@ -6,21 +6,21 @@
 
     <groupId>me.stefan923</groupId>
     <artifactId>PlayerDataStorage</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1.0</version>
     <description>Easily save(load) player data to(from) database.</description>
 
     <repositories>
         <repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+            <id>codemc-nms</id>
+            <url>https://repo.codemc.org/repository/nms/</url>
         </repository>
     </repositories>
 
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.8-R0.1-SNAPSHOT</version>
+            <artifactId>spigot</artifactId>
+            <version>1.16.5-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -53,7 +53,7 @@
                 </executions>
 
                 <configuration>
-                    <sourceDirectory>${basedir}</sourceDirectory>
+                    <sourceDirectory>${basedir}/config</sourceDirectory>
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
                     <logViolationsToConsole>true</logViolationsToConsole>
