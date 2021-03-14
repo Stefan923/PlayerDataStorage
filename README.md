@@ -14,7 +14,7 @@ cd PlayerDataStorage/
 mvn clean install
 ```
 
-You will now be able to add canvas as a dependency in your pom.xml files with the following:
+You will now be able to add PlayerDataStorage as a dependency in your pom.xml files with the following:
 
 ```xml
 <dependency>
