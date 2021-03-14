@@ -20,7 +20,7 @@ You will now be able to add PlayerDataStorage as a dependency in your pom.xml fi
 <dependency>
     <groupId>me.stefan923</groupId>
     <artifactId>PlayerDataStorage</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1.0</version>
     <scope>compile</scope>
 </dependency>
 ```
