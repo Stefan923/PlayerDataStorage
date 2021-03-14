@@ -1,12 +1,11 @@
-package me.stefan923.playerdatastorage;
+package me.stefan923.playerdatastorage.playerdata;
 
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 
-import java.io.Serializable;
 import java.util.UUID;
 
-public class PlayerData implements Serializable {
+public class PlayerData implements IPlayerData {
 
     private final ItemStack[] inventoryContent;
     private final ItemStack[] enderChestContent;
