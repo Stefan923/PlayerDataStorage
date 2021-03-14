@@ -8,8 +8,6 @@ import java.util.UUID;
 
 public interface IPlayerData extends Serializable {
 
-    UUID getUuid();
-
     ItemStack[] getInventoryContent();
 
     ItemStack[] getEnderChestContent();

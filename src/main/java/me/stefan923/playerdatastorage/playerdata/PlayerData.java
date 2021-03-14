@@ -34,18 +34,22 @@ public class PlayerData implements IPlayerData {
         this.uuid = uuid;
     }
 
+    @Override
     public ItemStack[] getInventoryContent() {
         return inventoryContent;
     }
 
+    @Override
     public ItemStack[] getEnderChestContent() {
         return enderChestContent;
     }
 
+    @Override
     public PotionEffect[] getPotionEffects() {
         return potionEffects;
     }
 
+    @Override
     public float getExperience() {
         return experience;
     }
