@@ -1,7 +1,7 @@
 package me.stefan923.playerdatastorage;
 
-import org.bukkit.Effect;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
 
 import java.io.Serializable;
 import java.util.UUID;
@@ -10,20 +10,20 @@ public class PlayerData implements Serializable {
 
     private final ItemStack[] inventoryContent;
     private final ItemStack[] enderChestContent;
-    private final Effect[] effects;
+    private final PotionEffect[] potionEffects;
     private final float experience;
 
     private transient UUID uuid;
 
-    public PlayerData(ItemStack[] inventoryContent, ItemStack[] enderChestContent, Effect[] effects, float experience) {
+    public PlayerData(ItemStack[] inventoryContent, ItemStack[] enderChestContent, PotionEffect[] potionEffects, float experience) {
         this.inventoryContent = inventoryContent;
         this.enderChestContent = enderChestContent;
-        this.effects = effects;
+        this.potionEffects = potionEffects;
         this.experience = experience;
     }
 
-    public PlayerData(UUID uuid, ItemStack[] inventoryContent, ItemStack[] enderChestContent, Effect[] effects, float experience) {
-        this(inventoryContent, enderChestContent, effects, experience);
+    public PlayerData(UUID uuid, ItemStack[] inventoryContent, ItemStack[] enderChestContent, PotionEffect[] potionEffects, float experience) {
+        this(inventoryContent, enderChestContent, potionEffects, experience);
         this.uuid = uuid;
     }
 
@@ -43,8 +43,8 @@ public class PlayerData implements Serializable {
         return enderChestContent;
     }
 
-    public Effect[] getEffects() {
-        return effects;
+    public PotionEffect[] getPotionEffects() {
+        return potionEffects;
     }
 
     public float getExperience() {

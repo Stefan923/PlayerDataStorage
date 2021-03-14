@@ -17,7 +17,7 @@ public class MySQLConnection {
         this.username = username;
         this.password = password;
         this.tablePrefix = tablePrefix;
-        this.url = "jdbc:mysql://" + host + ":" + port + "/" + databaseName;
+        this.url = "jdbc:mysql://" + host + ":" + port + "/" + databaseName + "?characterEncoding=latin1&useConfigs=maxPerformance";
     }
 
     public String getTablePrefix() {
