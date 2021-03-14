@@ -1,5 +1,7 @@
 package me.stefan923.playerdatastorage;
 
+import me.stefan923.playerdatastorage.playerdata.PlayerData;
+
 import java.util.UUID;
 
 public interface PlayerDataStorage {
