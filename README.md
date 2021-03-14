@@ -7,7 +7,7 @@ PlayerDataStorage is integrated into Bukkit plugins through the use of Maven.</b
 * [Maven 3](http://maven.apache.org/download.cgi)
 * [GIT](https://git-scm.com/downloads)
 
-Then use the following command to install canvas to your local maven repository:</br>
+Then use the following commands to install PlayerDataStorage to your local maven repository:</br>
 ```shell
 git clone https://github.com/Stefan923/PlayerDataStorage.git
 cd PlayerDataStorage/
