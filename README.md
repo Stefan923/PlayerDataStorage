@@ -97,5 +97,4 @@ This is an example code that migrates locally saved player data to the database.
 String directoryPath = getServer().getWorldContainer() + File.separator + "world" + File.separator + "playerdata";
 Migration migration = new Migration(storage);
 migration.migrateAllFilesToDatabase(directoryPath);
-}
 ```
