@@ -1,17 +1,16 @@
 package me.stefan923.playerdatastorage.util;
 
-import me.stefan923.playerdatastorage.PlayerData;
-import org.bukkit.inventory.ItemStack;
+import me.stefan923.playerdatastorage.playerdata.PlayerData;
 import org.bukkit.util.io.BukkitObjectInputStream;
 import org.bukkit.util.io.BukkitObjectOutputStream;
-import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class SerializationUtil {
+public final class SerializationUtil {
+
+    private SerializationUtil() { }
 
     public static byte[] playerDataToByteArray(PlayerData playerData) throws IllegalStateException {
         try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
