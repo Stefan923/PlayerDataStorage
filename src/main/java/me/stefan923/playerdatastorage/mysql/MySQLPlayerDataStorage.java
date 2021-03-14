@@ -1,7 +1,7 @@
 package me.stefan923.playerdatastorage.mysql;
 
-import me.stefan923.playerdatastorage.PlayerData;
 import me.stefan923.playerdatastorage.PlayerDataStorage;
+import me.stefan923.playerdatastorage.playerdata.PlayerData;
 import me.stefan923.playerdatastorage.util.SerializationUtil;
 
 import java.io.IOException;
