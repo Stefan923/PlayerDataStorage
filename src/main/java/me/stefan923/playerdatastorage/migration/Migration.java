@@ -1,5 +1,6 @@
 package me.stefan923.playerdatastorage.migration;
 
+import me.stefan923.playerdatastorage.PlayerDataStorage;
 import me.stefan923.playerdatastorage.mysql.MySQLPlayerDataStorage;
 import me.stefan923.playerdatastorage.playerdata.NBTPlayerData;
 import me.stefan923.playerdatastorage.playerdata.PlayerData;
@@ -14,22 +15,22 @@ import java.io.InputStream;
 import java.util.Objects;
 import java.util.UUID;
 
-public class MySQLMigration {
+public class Migration {
 
-    private final MySQLPlayerDataStorage dataStorage;
+    private final PlayerDataStorage dataStorage;
 
-    public MySQLMigration(MySQLPlayerDataStorage dataStorage) {
+    public Migration(PlayerDataStorage dataStorage) {
         this.dataStorage = dataStorage;
     }
 
-    public void migrateAllFilesToMySQL(String directory) {
+    public void migrateAllFilesToDatabase(String directory) {
         File directoryFile = new File(directory);
         for (String fileName : Objects.requireNonNull(directoryFile.list())) {
-            migrateFileToMySQL(new File(directoryFile + File.separator + fileName));
+            migrateFileToDatabase(new File(directoryFile + File.separator + fileName));
         }
     }
 
-    public void migrateFileToMySQL(File playerDataFile) {
+    public void migrateFileToDatabase(File playerDataFile) {
         String fileName = FilenameUtils.removeExtension(playerDataFile.getName());
         try (InputStream inputStream = new FileInputStream(playerDataFile)) {
             NBTPlayerData nbtPlayerData = new NBTPlayerData(NBTCompressedStreamTools.a(inputStream));
