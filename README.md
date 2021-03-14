@@ -65,7 +65,7 @@ public void onJoin(PlayerJoinEvent event) {
         player.getInventory().setContents(playerData.getInventoryContent());
         player.getEnderChest().setContents(playerData.getEnderChestContent());
         player.addPotionEffects(Arrays.asList(playerData.getPotionEffects()));
-        player.setExp(playerData.getExperience());
+        ExperienceUtil.setTotalExperience(player, playerData.getTotalExperience());
     }
 }
 ```
@@ -84,9 +84,18 @@ public void onQuit(PlayerQuitEvent event) {
             player.getInventory().getContents(),
             player.getEnderChest().getContents(),
             potionEffects.toArray(new PotionEffect[0]),
-            player.getExp()
+            ExperienceUtil.getTotalExperience(player.getLevel(), player.getExp())
     );
 
     storage.savePlayerData(playerData);
+}
+```
+
+This is an example code that migrates locally saved player data to the database.
+
+```java
+String directoryPath = getServer().getWorldContainer() + File.separator + "world" + File.separator + "playerdata";
+Migration migration = new Migration(storage);
+migration.migrateAllFilesToDatabase(directoryPath);
 }
 ```
