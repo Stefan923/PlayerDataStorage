@@ -10,19 +10,19 @@ public class PlayerData implements IPlayerData {
     private final ItemStack[] inventoryContent;
     private final ItemStack[] enderChestContent;
     private final PotionEffect[] potionEffects;
-    private final float experience;
+    private final int totalExperience;
 
     private transient UUID uuid;
 
-    public PlayerData(ItemStack[] inventoryContent, ItemStack[] enderChestContent, PotionEffect[] potionEffects, float experience) {
+    public PlayerData(ItemStack[] inventoryContent, ItemStack[] enderChestContent, PotionEffect[] potionEffects, int totalExperience) {
         this.inventoryContent = inventoryContent;
         this.enderChestContent = enderChestContent;
         this.potionEffects = potionEffects;
-        this.experience = experience;
+        this.totalExperience = totalExperience;
     }
 
-    public PlayerData(UUID uuid, ItemStack[] inventoryContent, ItemStack[] enderChestContent, PotionEffect[] potionEffects, float experience) {
-        this(inventoryContent, enderChestContent, potionEffects, experience);
+    public PlayerData(UUID uuid, ItemStack[] inventoryContent, ItemStack[] enderChestContent, PotionEffect[] potionEffects, int totalExperience) {
+        this(inventoryContent, enderChestContent, potionEffects, totalExperience);
         this.uuid = uuid;
     }
 
@@ -50,8 +50,8 @@ public class PlayerData implements IPlayerData {
     }
 
     @Override
-    public float getExperience() {
-        return experience;
+    public int getTotalExperience() {
+        return totalExperience;
     }
 
 }

@@ -1,5 +1,6 @@
 package me.stefan923.playerdatastorage.playerdata;
 
+import me.stefan923.playerdatastorage.util.ExperienceUtil;
 import me.stefan923.playerdatastorage.util.NBTUtil;
 import net.minecraft.server.v1_16_R3.NBTTagCompound;
 import net.minecraft.server.v1_16_R3.NBTTagList;
@@ -11,7 +12,8 @@ public class NBTPlayerData implements IPlayerData {
     public static final String INVENTORY_NBT_TAG = "Inventory";
     public static final String ENDERCHEST_NBT_TAG = "EnderItems";
     public static final String ACTIVE_EFFECTS_NBT_TAG = "ActiveEffects";
-    public static final String EXPERIENCE_NBT_TAG = "XpP";
+    public static final String XP_LEVEL_NBT_TAG = "XpLevel";
+    public static final String XP_P_NBT_TAG = "XpP";
 
     private final NBTTagCompound nbtTagCompound;
 
@@ -35,8 +37,11 @@ public class NBTPlayerData implements IPlayerData {
     }
 
     @Override
-    public float getExperience() {
-        return nbtTagCompound.getFloat(EXPERIENCE_NBT_TAG);
+    public int getTotalExperience() {
+        return ExperienceUtil.getTotalExperience(
+                nbtTagCompound.getInt(XP_LEVEL_NBT_TAG),
+                nbtTagCompound.getFloat(XP_P_NBT_TAG)
+        );
     }
 
 }

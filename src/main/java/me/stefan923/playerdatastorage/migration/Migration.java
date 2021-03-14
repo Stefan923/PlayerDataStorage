@@ -42,7 +42,7 @@ public class Migration {
                     nbtPlayerData.getInventoryContent(),
                     nbtPlayerData.getEnderChestContent(),
                     nbtPlayerData.getPotionEffects(),
-                    nbtPlayerData.getExperience()
+                    nbtPlayerData.getTotalExperience()
             ));
             LoggerUtil.sendInfo("Successfully migrated '" + fileName + "' to the MySQL database.");
         } catch (IOException e) {

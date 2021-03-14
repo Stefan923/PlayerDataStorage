@@ -14,6 +14,6 @@ public interface IPlayerData extends Serializable {
 
     PotionEffect[] getPotionEffects();
 
-    float getExperience();
+    int getTotalExperience();
 
 }
