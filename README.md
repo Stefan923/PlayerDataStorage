@@ -57,19 +57,16 @@ This is an example code in which the player's data is loaded from database when 
 private final PlayerDataStorage storage;
 
 @EventHandler
-public void onQuit(PlayerQuitEvent event) {
+public void onJoin(PlayerJoinEvent event) {
     Player player = event.getPlayer();
-    Collection<PotionEffect> potionEffects = player.getActivePotionEffects();
+    PlayerData playerData = storage.getPlayerData(player.getUniqueId());
     
-    PlayerData playerData = new PlayerData(
-            player.getUniqueId(),
-            player.getInventory().getContents(),
-            player.getEnderChest().getContents(),
-            potionEffects.toArray(new PotionEffect[0]),
-            player.getExp()
-    );
-
-    storage.savePlayerData(playerData);
+    if (playerData != null) {
+        player.getInventory().setContents(playerData.getInventoryContent());
+        player.getEnderChest().setContents(playerData.getEnderChestContent());
+        player.addPotionEffects(Arrays.asList(playerData.getPotionEffects()));
+        player.setExp(playerData.getExperience());
+    }
 }
 ```
 
