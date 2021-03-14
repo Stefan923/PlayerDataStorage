@@ -26,6 +26,9 @@ public class Migration {
     public void migrateAllFilesToDatabase(String directory) {
         File directoryFile = new File(directory);
         for (String fileName : Objects.requireNonNull(directoryFile.list())) {
+            if (fileName.endsWith("_old")) {
+                continue;
+            }
             migrateFileToDatabase(new File(directoryFile + File.separator + fileName));
         }
     }

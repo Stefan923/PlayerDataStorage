@@ -46,7 +46,7 @@ public class PlayerData implements IPlayerData {
 
     @Override
     public PotionEffect[] getPotionEffects() {
-        return potionEffects;
+        return potionEffects != null ? potionEffects : new PotionEffect[0];
     }
 
     @Override
